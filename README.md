@@ -1,2 +1,2 @@
-# AndroidBluetoothChat
-This is an Android app for chatting between two devices via Bluetooth
+# BLEPeripheralApp
+This is BLE peripheral app that can be accessed to Add or Multiply of two numbers
