@@ -12,17 +12,17 @@ import androidx.appcompat.app.AppCompatActivity;
  * Created by Reza Bakhshande on 12/03/2021.
  */
 
-public abstract class C_ShowMessage extends AppCompatActivity
+public class C_ShowMessage extends AppCompatActivity
 {
 
-    protected void F_ShowMessage(int stringId)
+    protected void F_ShowMessage(int stringId , Context context)
     {
-        F_ShowMessage(getString(stringId));
+        F_ShowMessage(getString(stringId) , context);
     }
 
-    protected void F_ShowMessage(String string)
+    protected void F_ShowMessage(String string , Context context)
     {
-        Toast.makeText(getApplicationContext(), string, Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, string, Toast.LENGTH_SHORT).show();
     }
 
 }
