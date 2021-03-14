@@ -3,7 +3,7 @@ package com.macroid.bleperipheralapp.utils;
 import java.util.UUID;
 
 /**
- * Created by itanbarpeled on 28/01/2018.
+ * Created by Reza Bakhshande on 12/03/2021.
  */
 
 public class C_Constants
