@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BLEPeripheralApp</string>
+    <string name="menuBluetoothOn">Turn on Bluetooth</string>
+    <string name="menuAvailableDevices">Available Devices</string>
+    <string name="textviewDeviceName">Device Name</string>
+    <string name="textviewAvailableDevices">AVAILABLE DEVICES</string>
+    <string name="unknownError">Unknown error</string>
+    <string name="statusErrorWhenConnecting">An error occurred when connecting to a device. Error Code</string>
+
+</resources>
