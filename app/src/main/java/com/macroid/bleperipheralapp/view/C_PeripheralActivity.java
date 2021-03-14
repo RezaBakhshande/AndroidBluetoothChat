@@ -6,8 +6,9 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.macroid.bleperipheralapp.R;
-import com.macroid.bleperipheralapp.di.components.DaggerI_ScanListComponent;
+import com.macroid.bleperipheralapp.di.components.DaggerI_ActivityComponent;
 import com.macroid.bleperipheralapp.di.models.C_BluetoothModelDagger;
+import com.macroid.bleperipheralapp.di.models.C_PermissionHelperModel;
 import com.macroid.bleperipheralapp.models.C_BluetoothModel;
 import com.macroid.bleperipheralapp.services.C_PeripheralAdvertiseService;
 
@@ -25,7 +26,6 @@ public class C_PeripheralActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_c__device_scan);
-        F_FindViews();
         F_DaggerImplimentation();
         bluetoothModel.F_SetGattServer(this);
         bluetoothModel.F_SetBluetoothService();
@@ -39,8 +39,9 @@ public class C_PeripheralActivity extends AppCompatActivity
     //This method for implimentation dagger2
     private void F_DaggerImplimentation()
     {
-        DaggerI_ScanListComponent.builder()
+        DaggerI_ActivityComponent.builder()
                 .c_BluetoothModelDagger(new C_BluetoothModelDagger())
+                .c_PermissionHelperModel(new C_PermissionHelperModel(this))
                 .build()
                 .Inject(this);
     }
@@ -64,17 +65,10 @@ public class C_PeripheralActivity extends AppCompatActivity
     }
 
 
-    private void F_FindViews()
-    {
-        //recyclerViewScanDevices = findViewById(R.id.recyclerViewScanDevices);
-        //textViewMyDeviceName = findViewById(R.id.textViewMyDeviceName);
-    }
-
-
     @Override
     public void onBackPressed()
     {
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, C_MainActivity.class));
         finish();
         super.onBackPressed();
     }
